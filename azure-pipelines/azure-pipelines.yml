@@ -1,0 +1,16 @@
+trigger:
+- main
+
+variables:
+  imageName: devops-practice
+
+steps:
+- task: Docker@2
+  inputs:
+    command: buildAndPush
+    repository: $(imageName)
+    dockerfile: docker/Dockerfile
+    containerRegistry: docker-hub-connection
+    tags: |
+      $(Build.BuildId)
+
