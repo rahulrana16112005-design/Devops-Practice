@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+iapiVersion: apps/v1
 kind: Deployment
 metadata:
   name: devops-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devops-app
-        image: <DOCKER_USERNAME>/devops-practice:$(Build.BuildId)
+        image: <DOCKER_USERNAME>/devops-practice:1
         ports:
         - containerPort: 5000
 
