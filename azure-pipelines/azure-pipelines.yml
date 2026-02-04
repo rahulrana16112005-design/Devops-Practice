@@ -5,9 +5,9 @@ variables:
   imageName: devops-practice
 
 steps:
-- task: Docker@2
+  #- task: Docker@2
   inputs:
-    command: buildAndPush
+    # command: buildAndPush
     repository: $(imageName)
     dockerfile: docker/Dockerfile
     containerRegistry: docker-hub-connection
