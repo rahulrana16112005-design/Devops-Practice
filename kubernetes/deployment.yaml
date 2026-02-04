@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devops-app
-        image: <DOCKER_USERNAME>/devops-practice:1
+        image: <DOCKER_USERNAME>/devops-practice:$(Build.BuildId)
         ports:
         - containerPort: 5000
 
