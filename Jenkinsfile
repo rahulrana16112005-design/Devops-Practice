@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'maven:3.9.9-eclipse-temurin-17'
-    }
-  }
-
+  agent any
   stages {
-    stage('Maven Check') {
+    stage('Docker Check') {
       steps {
-        sh 'mvn -version'
+        sh 'docker version'
       }
     }
   }
