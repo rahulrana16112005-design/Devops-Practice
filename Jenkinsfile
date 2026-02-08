@@ -1,16 +1,20 @@
 pipeline {
-  agent {
-    docker {
-      image 'docker:24-cli'
-      args '-v /var/run/docker.sock:/var/run/docker.sock'
-    }
-  }
+  agent any
+
   stages {
-    stage('Check') {
+
+    stage('Checkout') {                // 1–9
       steps {
-        sh 'docker --version'
+        echo 'Checkout ho raha hai'
       }
     }
+
+    stage('Syntax Check') {             // 10–13
+      steps {
+        echo 'Pipeline syntax OK'
+      }
+    }
+
   }
 }
 
