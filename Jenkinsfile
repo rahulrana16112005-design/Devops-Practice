@@ -1,14 +1,14 @@
 pipeline {
   agent {
     docker {
-      image 'docker:24-cli'
-      args '-v /var/run/docker.sock:/var/run/docker.sock'
+      image 'maven:3.9.9-eclipse-temurin-17'
     }
   }
+
   stages {
-    stage('Docker Check') {
+    stage('Maven Check') {
       steps {
-        sh 'docker version'
+        sh 'mvn -version'
       }
     }
   }
