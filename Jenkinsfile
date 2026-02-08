@@ -1,11 +1,15 @@
 pipeline {
-  agent { label 'docker' }
-
+  agent {
+    docker {
+      image 'docker:latest'
+    }
+  }
   stages {
-    stage('Checkout') {
+    stage('Check') {
       steps {
-        echo 'Docker wale agent pe chal raha hoon'
+        sh 'docker --version'
       }
     }
   }
 }
+
